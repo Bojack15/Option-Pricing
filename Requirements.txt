@@ -1,0 +1,5 @@
+streamlit==1.38.0
+numpy==1.24.3
+scipy==1.11.2
+matplotlib==3.7.2
+yfinance==0.2.26
