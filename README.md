@@ -32,4 +32,6 @@ Real-Time S&P 500 Company Pricing
 ##### Run the Streamlit app:
       •         streamlit run app.py
 
+#### First Look 
+<img width="1440" alt="Screenshot 2024-09-25 at 3 02 00 PM" src="https://github.com/user-attachments/assets/bcee4716-46d8-4875-b967-048cd83a775b">
 
