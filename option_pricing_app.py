@@ -83,12 +83,28 @@ st.write(f'### Monte Carlo Simulation Price: ${mc_price:.2f}')
 st.write(f'### Binomial Tree Model Price: ${bt_price:.2f}')
 
 # Option type visual representation
+# if st.checkbox('Show price distribution for Monte Carlo'):
+#     st_vals = []
+#     for _ in range(simulations):
+#         ST = S * exp((r - 0.5 * sigma ** 2) * T + sigma *
+#                      sqrt(T) * np.random.normal(0, 1))
+#         st_vals.append(ST)
+#     plt.hist(st_vals, bins=50)
+#     plt.title('Monte Carlo Simulation: Asset Price Distribution at Maturity')
+#     plt.xlabel('Asset Price')
+#     plt.ylabel('Frequency')
+#     st.pyplot(plt.gcf())
+
 if st.checkbox('Show price distribution for Monte Carlo'):
     st_vals = []
     for _ in range(simulations):
-        ST = S * exp((r - 0.5 * sigma ** 2) * T + sigma *
-                     sqrt(T) * np.random.normal(0, 1))
+        ST = S * exp((r - 0.5 * sigma ** 2) * T + sigma * sqrt(T) * np.random.normal(0, 1))
         st_vals.append(ST)
+
+    # Convert st_vals to a NumPy array if necessary
+    st_vals = np.array(st_vals)
+
+    # Now plot the histogram
     plt.hist(st_vals, bins=50)
     plt.title('Monte Carlo Simulation: Asset Price Distribution at Maturity')
     plt.xlabel('Asset Price')
